@@ -1,1 +1,1 @@
-console.log('Hello Isreal');
+console.log('Hello Israel');
