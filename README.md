@@ -1,18 +1,9 @@
-# Getting Started with Create React App
+Tech Career Project:
+1.	Update Treasurer - Students will be able to update the Treasurer about faults in the apartments. Only the Treasurer will have access to this information
+2.	The course director will have information about who lives in each apartment.
+3.	Grades - Students' grades will be uploaded to the site, each student will have access only to his grade report. The grades will be upload by the course director.
+4.	Calendar - This site will have the option to see the calendar for the whole year (like Google Calendar).
 
-פרויקט עזר לטק קריירה.
-אפשרויות בפרויקט זה:
-1) הסטודנטים יוכלו לעדכן את גיזבר על תקלות בדירות וכל מידע שנשלח יהיה נגיש רק לגיזבר.
-2) למנהל/ת הקורס יהיה מידע של מי נמצא בכל דירה.
-3) בפרויקט זה יעלו ציונים של כל סטודנט וכל סטודנט יוכל לגשת רק לדוח הציונים שלו (למנהל/ת הקורס יהיה גישה לכל הציונים של כל הסטודנטים).
-4)יהיה באתר הזה אפשרות לראות את הלו''ז של כל השנה(כמו יומן גוגל).
-
-
-
-
-/*
-אם יש לכם עוד רעיונות תוסיפו
-*/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
