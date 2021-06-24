@@ -1,10 +1,13 @@
 import Login from './pages/Login';
+import ActionMenu from './pages/ActionMenu';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <div>
-      <Login/>
-    </div>
+    <Layout>
+      <Login />
+      <ActionMenu />
+    </Layout>
   );
 }
 
