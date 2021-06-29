@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react"
-const Home = ({ }) => {
 
-    const ArrayPhoto = ["/TechTwoPhoto.jpg", "Tech-C.jpg"]
-    const [PhotoSliders, SetPhotoSlider] = useState(ArrayPhoto)
+
+const PhotoSliders = ["/TechTwoPhoto.jpg", "Tech-C.jpg"]
+
+const Home = () => {
     const [PhotoSlidersPlay, SetPhotoSliderPlay] = useState(0)
     const [NumberTopCard, setNumberTopCard] = useState("-22000px")
     const [CardCourse, setCardCourse] = useState([])
@@ -17,7 +18,7 @@ const Home = ({ }) => {
         { id: 6, nameCurses: "לבעלי רקע ב -IT -SECURITY INCIDENT RESPONSEE", information: "הצורך בשטח לאנשי עמיקה בעקר", urlPhoto: "https://images.unsplash.com/photo-1606765962197-9cf685904162?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGhpZ2glMjB0ZWNofGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" }]
     const Header = styled.div`
     width:50vw;
-    background-image: url(${ArrayPhoto[PhotoSlidersPlay]});
+    background-image: url(${PhotoSliders[PhotoSlidersPlay]});
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -128,7 +129,7 @@ function CloseWindowCard(){
         </ThemeImageForTheSite>
         <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
             <h1 style={{ textAlign: "right" }}>:הקורסים שלנו </h1>
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", justifyContent: "space-around" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                 {
                     ArrayCours.map(element => {
                         return (
