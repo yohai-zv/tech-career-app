@@ -1,11 +1,15 @@
 import Login from './pages/Login';
 import Home from './HomePage/Home';
+import ActionMenu from './pages/ActionMenu';
+import Layout from './components/Layout';
+
 function App() {
   return (
-    <div>
+    <Layout>
       <Home/>
-      <Login/>
-    </div>
+      <Login />
+      <ActionMenu />
+    </Layout>
   );
 }
 
