@@ -32,14 +32,14 @@ const Login = () => {
     }
   `;
   return (
-    <StyleDiv className="login">
+    <StyleDiv >
       <h1> Login </h1>
-      <StyleForm className="loginform">
+      <StyleForm >
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <a href="#">Forgot password?</a>
         <StyleButton>Login</StyleButton>
-        <label htmlFor="">
+        <label>
           <input type="checkbox" />
           Remember me
         </label>
