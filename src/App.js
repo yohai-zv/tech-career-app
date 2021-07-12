@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Home from './HomePage/Home';
 import ActionMenu from './pages/ActionMenu';
 import Layout from './components/Layout';
+import StudentsList from './pages/StudentsList';
 
 export default function App() {
   return (
@@ -16,7 +17,9 @@ export default function App() {
           <Route path='/login'>
             <Login />
           </Route>
-         
+          <Route path='/Students'>
+            <StudentsList />
+          </Route>
           <Route path='/'>
             <Home />
           </Route>
