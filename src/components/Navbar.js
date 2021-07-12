@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const NavbarTag = styled.nav`
   display: flex;
@@ -47,12 +48,16 @@ const Navbar = () => {
           <Image src='/tech-career-logo.png' />
         </ImageDiv>
         <Ul>
-          <Li>item</Li>
-          <Li>item</Li>
-          <Li>item</Li>
-          <Li>item</Li>
+          <Li>
+            <Link to='/'>home</Link>
+          </Li>
+          <Li>
+            <Link to='/actions'>actions </Link>
+          </Li>
         </Ul>
-        <Button color='bedge'>הירשם / התחבר</Button>
+        <Button color='bedge'>
+          <Link to='/login'>הירשם / התחבר</Link>
+        </Button>
       </NavbarTag>
     </NavbarWrapper>
   );
