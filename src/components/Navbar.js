@@ -53,9 +53,6 @@ const Navbar = () => {
           <Li>
             <Link to='/students'>Students</Link>
           </Li>
-          <Li>
-            <Link to='/actions'>Actions </Link>
-          </Li>
         </Ul>
         <h3>Hello User</h3>
         {/* <Button color='bedge'>

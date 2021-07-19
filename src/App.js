@@ -4,7 +4,6 @@ import Login from './pages/Login';
 import Home from './HomePage/Home';
 import ActionMenu from './pages/ActionMenu';
 import Layout from './components/Layout';
-import StudentsList from './pages/StudentsList';
 
 export default function App() {
   
@@ -15,14 +14,11 @@ export default function App() {
         <Route path='/' exact>
             <Home />
           </Route>
-          <Route path='/actions'>
-            <ActionMenu />
-          </Route>
           <Route path='/login'>
             <Login />
           </Route>
           <Route path='/Students'>
-            <StudentsList />
+           <ActionMenu/>
           </Route>
           <Redirect to='/'/>
         </Switch>
