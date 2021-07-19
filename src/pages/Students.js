@@ -162,7 +162,7 @@ const ActionMenu = () => {
             <P>רשימת כל התלמידים הנמצאים במחזור הנל</P>
             <ul>
               {
-                students.map(student =><li>{student.name}</li>)
+                students.map(student =><li>{student.firstName } {student.lastName}</li>)
               }
 
             </ul>
