@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import styled from 'styled-components';
+
+import { getStudents } from '../services/api';
 
 const DropDownOption = styled.div`
   display: none;
@@ -115,7 +117,24 @@ const P = styled.p`
   line-height: 1.7rem;
 `;
 
+
+
 const ActionMenu = () => {
+  const [students, setStudents] = useState([]);
+
+
+  useEffect(() => {
+
+    const fetchStudents = async () => {
+      const res = await getStudents();
+      setStudents(res);
+
+    }
+
+    fetchStudents();
+
+
+  }, [])
   return (
     <>
       <MenuSection>
@@ -142,13 +161,10 @@ const ActionMenu = () => {
             <h2>מחזור מ' פיתוח תוכנה</h2>
             <P>רשימת כל התלמידים הנמצאים במחזור הנל</P>
             <ul>
-              <li>student</li>
-              <li>student</li>
-              <li>student</li>
-              <li>student</li>
-              <li>student</li>
-              <li>student</li>
-              <li>student</li>
+              {
+                students.map(student =><li>{student.name}</li>)
+              }
+
             </ul>
           </Content>
           <Form>
