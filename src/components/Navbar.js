@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button';
 import { Link } from 'react-router-dom';
 
 const NavbarTag = styled.nav`
@@ -49,15 +48,19 @@ const Navbar = () => {
         </ImageDiv>
         <Ul>
           <Li>
-            <Link to='/'>home</Link>
+            <Link to='/'>Home</Link>
           </Li>
           <Li>
-            <Link to='/actions'>actions </Link>
+            <Link to='/students'>Students</Link>
+          </Li>
+          <Li>
+            <Link to='/actions'>Actions </Link>
           </Li>
         </Ul>
-        <Button color='bedge'>
+        <h3>Hello User</h3>
+        {/* <Button color='bedge'>
           <Link to='/login'>הירשם / התחבר</Link>
-        </Button>
+        </Button> */}
       </NavbarTag>
     </NavbarWrapper>
   );
