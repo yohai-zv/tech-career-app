@@ -117,42 +117,58 @@ const P = styled.p`
   line-height: 1.7rem;
 `;
 
-
-
 const ActionMenu = () => {
   const [students, setStudents] = useState([]);
-
-
   useEffect(() => {
-
     const fetchStudents = async () => {
       const res = await getStudents();
       setStudents(res);
-
-    }
-
+    };
     fetchStudents();
+  }, []);
 
+  const [newNameStudent, setName] = useState('');
+  const [newStudentsLN, setNewStudentsLN] = useState('');
+  function getValueDetails(e) {
+    if (e.target.id === 'inputName') {
+      setName(e.target.value);
+      
+    }else if(e.target.id === "inputLastName" ){
+      setNewStudentsLN(e.target.value)
+    }
+  }
 
-  }, [])
+  function addStudent(e) {
+    e.preventDefault()
+    let NewArrayObject = {
+      firstName: newNameStudent,
+      lastName: newStudentsLN,
+      email: '0545463444',
+      description: 'TLV',
+    };
+    console.log(newNameStudent);
+    console.log(students);
+    setStudents((old)=>[...old,NewArrayObject])
+  }
+
   return (
     <>
       <MenuSection>
         <OptionsWrapper>
           <DropDownBtn>
-            <Button color='red'>הוספה</Button>
+            <Button color="red">הוספה</Button>
             <DropDownOption>
-              <Button color='lightblue'>תלמיד</Button>
-              <Button color='green'>תלמיד</Button>
-              <Button color='yellow'>תלמיד</Button>
+              <Button color="lightblue">תלמיד</Button>
+              <Button color="green">תלמיד</Button>
+              <Button color="yellow">תלמיד</Button>
             </DropDownOption>
           </DropDownBtn>
           <DropDownBtn>
-            <Button color='lightblue'>צפייה</Button>
+            <Button color="lightblue">צפייה</Button>
             <DropDownOption>
-              <Button color='orange'>ציונים</Button>
-              <Button color='gray'>ציונים</Button>
-              <Button color='pink'>ציונים</Button>
+              <Button color="orange">ציונים</Button>
+              <Button color="gray">ציונים</Button>
+              <Button color="pink">ציונים</Button>
             </DropDownOption>
           </DropDownBtn>
         </OptionsWrapper>
@@ -160,28 +176,40 @@ const ActionMenu = () => {
           <Content>
             <h2>מחזור מ' פיתוח תוכנה</h2>
             <P>רשימת כל התלמידים הנמצאים במחזור הנל</P>
-            <ul>
-              {
-                students.map(student =><li>{student.firstName } {student.lastName}</li>)
-              }
 
+            <ul>
+              {students.map((student) => (
+                <li>
+                  {student.firstName} {student.lastName}
+                </li>
+              ))}
             </ul>
           </Content>
           <Form>
             <H2>פרטי הסטודנט</H2>
             <InputDiv>
               <label>שם פרטי</label>
-              <Input type='text' placeholder='שם פרטי' />
+              <Input
+                id="inputName"
+                onChange={getValueDetails}
+                type="text"
+                placeholder="שם פרטי"
+              />
             </InputDiv>
             <InputDiv>
               <label>שם משפחה</label>
-              <Input type='text' placeholder='שם משפחה' />
+              <Input
+              id="inputLastName"
+                onChange={getValueDetails}
+                type="text"
+                placeholder="שם משפחה"
+              />
             </InputDiv>
             <label>אימייל</label>
-            <Input type='text' placeholder='example@example.com' />
+            <Input type="text" placeholder="example@example.com" />
             <label>מידע על התלמיד</label>
-            <Textarea placeholder='מידע על התלמיד'></Textarea>
-            <FormBtn>הוסף </FormBtn>
+            <Textarea placeholder="מידע על התלמיד"></Textarea>
+          <FormBtn onClick={addStudent}>הוסף </FormBtn>
           </Form>
         </AddStudent>
       </MenuSection>
